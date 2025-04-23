@@ -1,5 +1,4 @@
 import React from 'react';
-import Sidebar from '@/components/layout/Sidebar';
 import { Header } from '@/components/layout/Header';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -7,7 +6,14 @@ import { CropProvider, useCrop } from '@/lib/providers/CropProvider';
 
 function FieldManagementContent() {
   return (
-    <div className="space-y-6">
+    <div className="container mx-auto p-4 md:p-6 space-y-6">
+      <Header 
+        title="Gestión de Parcelas" 
+        breadcrumbs={[
+          { path: '/', label: 'Inicio' },
+          { path: '/field-management', label: 'Gestión de Parcelas' }
+        ]} 
+      />
       
       <div className="flex justify-between items-center">
         <h2 className="text-xl font-semibold">Mis Parcelas</h2>
@@ -155,24 +161,8 @@ function FieldManagementContent() {
 
 export default function FieldManagement() {
   return (
-    <div className="flex h-screen overflow-hidden">
-      <Sidebar />
-      
-      <div className="flex-1 flex flex-col overflow-hidden">
-        <Header 
-          title="Gestión de Parcelas" 
-          breadcrumbs={[
-            { path: '/', label: 'Inicio' },
-            { path: '/field-management', label: 'Gestión de Parcelas' }
-          ]} 
-        />
-        
-        <main className="flex-1 overflow-y-auto bg-slate-50 dark:bg-slate-900 p-4 sm:p-6 lg:p-8">
-          <CropProvider>
-            <FieldManagementContent />
-          </CropProvider>
-        </main>
-      </div>
-    </div>
+    <CropProvider>
+      <FieldManagementContent />
+    </CropProvider>
   );
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-import Sidebar from '@/components/layout/Sidebar';
 import { Header } from '@/components/layout/Header';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { CropProvider, useCrop } from '@/lib/providers/CropProvider';
@@ -10,7 +9,14 @@ function CropManagementContent() {
   const { availableCrops, selectedCrop, selectCrop } = useCrop();
 
   return (
-    <div className="space-y-6">
+    <div className="container mx-auto p-4 md:p-6 space-y-6">
+      <Header 
+        title="Gestión de Cultivos" 
+        breadcrumbs={[
+          { path: '/', label: 'Inicio' },
+          { path: '/crop-management', label: 'Gestión de Cultivos' }
+        ]} 
+      />
       
       {/* Crop Selector */}
       <Card>
@@ -94,27 +100,11 @@ function CropManagementContent() {
   );
 }
 
-// Main page component
+// Main page component that provides the CropProvider
 export default function CropManagement() {
   return (
-    <div className="flex h-screen overflow-hidden">
-      <Sidebar />
-      
-      <div className="flex-1 flex flex-col overflow-hidden">
-        <Header 
-          title="Gestión de Cultivos" 
-          breadcrumbs={[
-            { path: '/', label: 'Inicio' },
-            { path: '/crop-management', label: 'Gestión de Cultivos' }
-          ]} 
-        />
-        
-        <main className="flex-1 overflow-y-auto bg-slate-50 dark:bg-slate-900 p-4 sm:p-6 lg:p-8">
-          <CropProvider>
-            <CropManagementContent />
-          </CropProvider>
-        </main>
-      </div>
-    </div>
+    <CropProvider>
+      <CropManagementContent />
+    </CropProvider>
   );
 }
