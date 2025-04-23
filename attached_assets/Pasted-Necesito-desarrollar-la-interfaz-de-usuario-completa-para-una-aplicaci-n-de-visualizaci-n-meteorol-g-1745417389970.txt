@@ -1,0 +1,108 @@
+Necesito desarrollar la interfaz de usuario completa para una aplicación de visualización meteorológica usando React y Tailwind CSS. Esta UI será posteriormente conectada a un backend, pero en esta fase necesito todos los componentes funcionales de la interfaz.
+
+## Estructura de Páginas y Componentes:
+
+### Páginas Principales
+1. **Dashboard**: 
+   - Mapa interactivo como componente principal
+   - Panel de control de capas (viento, temperatura)
+   - Línea de tiempo para navegar entre datos históricos y actuales
+   - Filtros desplegables para parámetros meteorológicos
+
+2. **Análisis Histórico**:
+   - Gráficos comparativos (Line charts, bar charts)
+   - Selector de rango de fechas
+   - Tabla de datos históricos con ordenación y filtrado
+   - Sección de estadísticas y métricas clave
+
+3. **Pronóstico**:
+   - Visualización de datos futuros por días/horas
+   - Tarjetas resumen por día con indicadores visuales
+   - Gráficos de tendencias para variables clave
+   - Selector de ubicación para pronósticos específicos
+
+4. **Configuración**:
+   - Formularios para preferencias de usuario
+   - Selector de temas (claro/oscuro)
+   - Gestión de ubicaciones favoritas
+   - Opciones de visualización y unidades de medida
+
+5. **Información/Ayuda**:
+   - Guías de uso con imágenes
+   - Documentación sobre interpretación de datos
+   - Información sobre fuentes de datos
+   - Preguntas frecuentes
+
+### Componentes Compartidos
+1. **Sistema de Navegación**:
+   - Sidebar colapsable con íconos y etiquetas
+   - Indicador visual de sección actual
+   - Accesos rápidos a funciones principales
+
+2. **Header/Barra Superior**:
+   - Logo de la aplicación
+   - Buscador de ubicaciones con autocompletado
+   - Selector de región/área
+   - Botón de inicio de sesión/perfil de usuario
+   - Toggle de tema claro/oscuro
+
+3. **Breadcrumbs**:
+   - Ruta de navegación clickeable
+   - Indicador de posición actual
+
+4. **Panel de Control del Mapa**:
+   - Controles de zoom
+   - Selector de capas
+   - Botones de reset/vista inicial
+   - Opciones de visualización
+
+### Modales y Ventanas Emergentes
+1. **Modal de Detalles de Punto**:
+   - Información detallada al hacer clic en el mapa
+   - Gráficos pequeños de tendencia
+   - Botones para acciones rápidas (guardar ubicación, ver pronóstico)
+
+2. **Modal de Configuración de Capas**:
+   - Opciones de visibilidad de capas
+   - Ajustes de opacidad y color
+   - Presets guardables
+
+3. **Modal de Login/Registro**:
+   - Formularios de acceso y registro
+   - Opciones de recuperación de contraseña
+   - Login con redes sociales (simulado)
+
+4. **Modal de Exportación**:
+   - Selección de formato (CSV, JSON)
+   - Opciones de rango de datos
+   - Previsualización
+
+5. **Modal de Ayuda Contextual**:
+   - Guías específicas según la sección actual
+   - Tips de uso con imágenes
+
+## Requisitos Técnicos:
+- Implementar con React 18+ y TypeScript
+- Utilizar exclusivamente Tailwind CSS para todos los estilos
+- React Router para la navegación entre páginas
+- Implementar MapboxGL o Leaflet para los mapas interactivos
+- Diseño responsivo para todas las pantallas (móvil, tablet, escritorio)
+- Animaciones suaves para transiciones
+- Implementar modo claro/oscuro completo
+- Datos de ejemplo estáticos para demostración
+- Simular interactividad completa aunque sin backend real
+
+## Consideraciones de Diseño:
+- Interfaz limpia y científica, evitando elementos decorativos innecesarios
+- Paleta de colores que facilite la lectura de datos (especialmente en mapas)
+- Jerarquía visual clara con énfasis en los datos importantes
+- Iconografía consistente y clara
+- Espaciado adecuado entre elementos
+- Feedback visual para todas las interacciones
+
+## Entregables:
+- Código completo en React/TypeScript con Tailwind CSS
+- Estructura de carpetas organizada (pages, components, hooks, utils)
+- Responsive design implementado
+- Interactividad de UI completa (aunque sin backend real)
+- README con instrucciones de instalación y ejecución
