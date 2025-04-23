@@ -41,7 +41,7 @@ export function Sidebar({ className = "" }: SidebarProps) {
           <span className="material-icons text-primary-600 dark:text-primary-400">cloud</span>
           {!collapsed && (
             <span className="font-bold text-xl text-primary-600 dark:text-primary-400">
-              WeatherViz
+              AgroClima
             </span>
           )}
         </div>

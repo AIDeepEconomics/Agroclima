@@ -53,7 +53,7 @@ export function LoginModal({ open, onClose, onLogin, onRegister }: LoginModalPro
     <Dialog open={open} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>WeatherViz Account</DialogTitle>
+          <DialogTitle>AgroClima Account</DialogTitle>
           <DialogDescription>
             Access advanced features and save your preferences.
           </DialogDescription>

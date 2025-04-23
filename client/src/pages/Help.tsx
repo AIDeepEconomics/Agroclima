@@ -259,7 +259,7 @@ export default function Help() {
                   <CardContent>
                     <div className="space-y-4">
                       <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                        WeatherViz uses data from multiple trusted meteorological sources to provide the most accurate weather information. Our data is refreshed multiple times per hour for current conditions and forecasts.
+                        AgroClima uses data from multiple trusted meteorological sources to provide the most accurate weather information. Our data is refreshed multiple times per hour for current conditions and forecasts.
                       </p>
                       
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
@@ -413,8 +413,8 @@ export default function Help() {
                         <p className="text-sm text-slate-500 dark:text-slate-400 mb-3">
                           Get help via email
                         </p>
-                        <a href="mailto:support@weatherviz.example" className="text-primary-600 dark:text-primary-400 text-sm hover:underline">
-                          support@weatherviz.example
+                        <a href="mailto:support@agroclima.example" className="text-primary-600 dark:text-primary-400 text-sm hover:underline">
+                          support@agroclima.example
                         </a>
                       </div>
                       
