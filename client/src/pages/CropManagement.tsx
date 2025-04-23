@@ -1,4 +1,5 @@
 import React from 'react';
+import Sidebar from '@/components/layout/Sidebar';
 import { Header } from '@/components/layout/Header';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { CropProvider, useCrop } from '@/lib/providers/CropProvider';
@@ -100,11 +101,17 @@ function CropManagementContent() {
   );
 }
 
-// Main page component that provides the CropProvider
+// Main page component
 export default function CropManagement() {
   return (
-    <CropProvider>
-      <CropManagementContent />
-    </CropProvider>
+    <div className="flex h-screen overflow-hidden">
+      <Sidebar />
+      
+      <div className="flex-1 flex flex-col overflow-hidden">
+        <div className="flex-1 overflow-y-auto">
+          <CropManagementContent />
+        </div>
+      </div>
+    </div>
   );
 }

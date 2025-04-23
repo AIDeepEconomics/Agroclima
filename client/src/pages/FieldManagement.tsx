@@ -1,4 +1,5 @@
 import React from 'react';
+import Sidebar from '@/components/layout/Sidebar';
 import { Header } from '@/components/layout/Header';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -161,8 +162,16 @@ function FieldManagementContent() {
 
 export default function FieldManagement() {
   return (
-    <CropProvider>
-      <FieldManagementContent />
-    </CropProvider>
+    <div className="flex h-screen overflow-hidden">
+      <Sidebar />
+      
+      <div className="flex-1 flex flex-col overflow-hidden">
+        <div className="flex-1 overflow-y-auto">
+          <CropProvider>
+            <FieldManagementContent />
+          </CropProvider>
+        </div>
+      </div>
+    </div>
   );
 }
