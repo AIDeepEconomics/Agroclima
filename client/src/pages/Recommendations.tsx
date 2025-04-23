@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Sidebar from '@/components/layout/Sidebar';
 import { Header } from '@/components/layout/Header';
 import { 
   Card, 
@@ -333,8 +334,16 @@ function RecommendationsContent() {
 
 export default function Recommendations() {
   return (
-    <CropProvider>
-      <RecommendationsContent />
-    </CropProvider>
+    <div className="flex h-screen overflow-hidden">
+      <Sidebar />
+      
+      <div className="flex-1 flex flex-col overflow-hidden">
+        <div className="flex-1 overflow-y-auto">
+          <CropProvider>
+            <RecommendationsContent />
+          </CropProvider>
+        </div>
+      </div>
+    </div>
   );
 }
