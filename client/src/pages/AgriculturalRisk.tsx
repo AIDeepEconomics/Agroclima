@@ -37,14 +37,7 @@ function AgriculturalRiskContent() {
   };
 
   return (
-    <div className="container mx-auto p-4 md:p-6 space-y-6">
-      <Header 
-        title="Riesgo Agroclimático" 
-        breadcrumbs={[
-          { path: '/', label: 'Inicio' },
-          { path: '/agricultural-risk', label: 'Riesgo Agroclimático' }
-        ]} 
-      />
+    <div className="space-y-6">
       
       {/* Crop Selector */}
       <Card>
@@ -195,9 +188,19 @@ export default function AgriculturalRisk() {
       <Sidebar />
       
       <div className="flex-1 flex flex-col overflow-hidden">
-        <div className="flex-1 overflow-y-auto">
-          <AgriculturalRiskContent />
-        </div>
+        <Header 
+          title="Riesgo Agroclimático" 
+          breadcrumbs={[
+            { path: '/', label: 'Inicio' },
+            { path: '/agricultural-risk', label: 'Riesgo Agroclimático' }
+          ]} 
+        />
+        
+        <main className="flex-1 overflow-y-auto bg-slate-50 dark:bg-slate-900 p-4 sm:p-6 lg:p-8">
+          <CropProvider>
+            <AgriculturalRiskContent />
+          </CropProvider>
+        </main>
       </div>
     </div>
   );
