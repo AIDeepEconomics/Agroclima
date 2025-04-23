@@ -1,0 +1,144 @@
+Necesito expandir la UI actual de la aplicación meteorológica para incorporar funcionalidades específicas de gestión de riesgos agrícolas en Uruguay, orientada a productores de soja, maíz, trigo y cebada. Como ingeniero agrónomo, requiero que la interfaz integre información fenológica de cultivos con datos climáticos para predecir y gestionar riesgos.
+
+## Nuevas Secciones a Integrar:
+
+### 1. Módulo de Riesgo Agroclimático
+Crear una nueva sección principal en la navegación lateral denominada "Riesgo Agroclimático" con:
+
+- **Panel de Selección de Cultivos**:
+   - Selector visual con íconos de los cultivos principales (soja, maíz, trigo, cebada)
+   - Capacidad para filtrar información específica por cultivo
+   - Indicador de etapa fenológica actual para cada cultivo según la fecha
+
+- **Mapa de Riesgo Categorizado**:
+   - Visualización geográfica con zonas coloreadas según nivel de riesgo (bajo-verde, medio-amarillo, alto-naranja, crítico-rojo)
+   - Capas superpuestas para diferentes tipos de riesgos (sequía, granizo, heladas, exceso hídrico)
+   - Opción para visualizar predicciones de 1 a 14 días
+
+- **Tabla Resumen de Riesgos Regionales**:
+   - Listado por departamentos con indicadores visuales de riesgo
+   - Datos numéricos de probabilidad de eventos adversos
+   - Posibilidad de ordenar y filtrar por tipo de riesgo y magnitud
+
+### 2. Componente de Fenología y Etapas Críticas
+
+- **Línea de Tiempo Fenológica**:
+   - Visualización interactiva horizontal con las etapas de desarrollo del cultivo seleccionado
+   - Marcador de etapa actual según fecha y región
+   - Indicadores de etapas críticas con código de colores
+
+- **Panel de Etapas Críticas**:
+   - Tarjetas informativas para cada etapa crítica (ej. R1-R3 para soja, VT-R1 para maíz)
+   - Necesidades específicas y umbrales de riesgo para cada etapa
+   - Recomendaciones agronómicas contextuales
+
+- **Calendario de Siembra/Cosecha**:
+   - Visualización anual con ventanas óptimas de siembra y cosecha
+   - Ajustable según pronósticos climáticos actuales
+   - Integración con alertas por fechas próximas
+
+### 3. Modales y Ventanas Emergentes Específicas
+
+- **Modal de Detalle de Riesgo**:
+   - Activado al hacer clic en zonas del mapa o cultivos específicos
+   - Gráficos detallados de variables críticas (precipitación, temperatura, viento)
+   - Tabla con umbrales críticos y valores actuales/proyectados
+   - Botón para generar informe específico
+
+- **Modal de Recomendaciones Agronómicas**:
+   - Sugerencias específicas según el cultivo, etapa y riesgo detectado
+   - Opciones de manejo preventivo y mitigación de riesgos
+   - Referencias a estudios técnicos relevantes
+   - Posibilidad de guardar o compartir recomendaciones
+
+- **Modal de Análisis Histórico Comparativo**:
+   - Gráfico comparativo entre año actual y años análogos históricos
+   - Indicadores de desviación respecto a promedios históricos
+   - Proyección de rendimiento basada en condiciones actuales
+
+### 4. Integraciones a Componentes Existentes
+
+- **Ampliación del Dashboard Principal**:
+   - Widget de "Riesgo Semanal" para cultivos principales
+   - Indicadores de alerta temprana con notificaciones
+   - Resumen de etapas fenológicas actuales por región
+
+- **Expansión del Perfil de Usuario**:
+   - Configuración de parcelas con datos de cultivo, variedad y fecha de siembra
+   - Preferencias de notificación para riesgos específicos
+   - Historial de consultas y alertas recibidas
+
+### 5. Nuevas Visualizaciones y Gráficos
+
+- **Gráfico de Balance Hídrico**:
+   - Visualización diaria/semanal de precipitaciones vs. evapotranspiración
+   - Líneas de umbral para déficit y exceso según cultivo y etapa
+   - Proyección a 10 días con nivel de certidumbre visual
+
+- **Mapa de Calor de Estrés Térmico**:
+   - Visualización de horas acumuladas fuera de rango óptimo
+   - Segmentación por etapas fenológicas
+   - Opción para alternar entre estrés por calor y por frío
+
+- **Gráfico de Probabilidad de Eventos Extremos**:
+   - Visualización de probabilidad de heladas, granizo, lluvias intensas
+   - Agrupación por etapas fenológicas críticas
+   - Umbral de alerta personalizable por productor
+
+### 6. Sistema de Carga y Gestión de Datos
+
+- **Formulario de Registro de Parcelas**:
+   - Delimitación de parcelas sobre mapa (dibujo o importación de polígonos)
+   - Ingreso de datos del cultivo (variedad, fecha de siembra, densidad)
+   - Historial de manejo (tratamientos, fertilización)
+
+- **Panel de Importación de Datos**:
+   - Soporte para cargar archivos CSV/Excel con datos propios
+   - Integración con sistemas de monitoreo a campo (estaciones meteorológicas, sensores)
+   - Validación de datos y notificación de inconsistencias
+
+- **Calendario de Eventos**:
+   - Visualización de fechas clave (laboreos, aplicaciones, inspecciones)
+   - Integración con pronóstico para planificación de tareas
+   - Alertas por proximidad de eventos y condiciones adversas
+
+## Características Técnicas y de Diseño:
+
+- **Paleta de Colores Agronómica**:
+   - Colores distintivos para cada cultivo (verde-amarillo para soja, amarillo-naranja para maíz, ámbar para trigo, marrón para cebada)
+   - Escala clara de niveles de riesgo (verde-amarillo-naranja-rojo)
+   - Consistencia con el diseño actual pero añadiendo iconografía agrícola
+
+- **Iconografía Específica**:
+   - Conjunto de iconos para etapas fenológicas de cada cultivo
+   - Símbolos claros para tipos de riesgos (sequía, helada, granizo, inundación)
+   - Pictogramas para recomendaciones de manejo
+
+- **Organización de Navegación**:
+   - Añadir sección "Cultivos" en la navegación principal
+   - Submenu contextual según cultivo seleccionado
+   - Accesos rápidos a riesgos críticos actuales
+
+- **Adaptaciones Responsivas**:
+   - Versión simplificada de mapas fenológicos para dispositivos móviles
+   - Priorización de alertas actuales en pantallas pequeñas
+   - Diseño compacto de gráficos para visualización en campo
+
+## Consideraciones Regionales para Uruguay:
+
+- Adaptación a las zonas agrícolas principales: litoral oeste, centro-sur y este
+- Incorporación de umbrales específicos para variedades utilizadas en Uruguay
+- Calibración de modelos según historia climática regional
+- Terminología adaptada a los usos locales (ej. "chacra" en lugar de "parcela")
+- Referencia a instituciones locales (INIA, INUMET, facultades de agronomía)
+
+## Flujo de Usuario Objetivo:
+
+1. Productor ingresa a la aplicación y selecciona su cultivo principal
+2. Visualiza mapa de riesgos actuales filtrado para su cultivo
+3. Accede a información detallada sobre la etapa fenológica actual
+4. Recibe alertas personalizadas según la etapa crítica y condiciones
+5. Consulta recomendaciones específicas para mitigar riesgos detectados
+6. Guarda informe para compartir con asesores o implementar acciones
+
+Esta expansión debe integrarse armónicamente con la interfaz existente, manteniendo la usabilidad pero añadiendo las capas de información agronómica necesarias para convertir los datos meteorológicos en decisiones de manejo agrícola fundamentadas.
