@@ -1,8 +1,8 @@
-# AgroClima: Meteorological Visualization Platform
+# AgroClima: Agricultural Meteorological Visualization Platform
 
 ## Project Overview
 
-AgroClima is a comprehensive meteorological visualization application built with React, TypeScript, and Tailwind CSS. It provides interactive visualizations of weather data with a focus on agricultural applications, including current conditions, historical analysis, and forecasts.
+AgroClima is a comprehensive agricultural meteorological visualization application built with React, TypeScript, and Tailwind CSS. It provides interactive visualizations of weather data with a focus on agricultural applications, including current conditions, historical analysis, and forecasts. The application is specifically designed for agricultural risk management in Uruguay, targeting producers of soybean, corn, wheat, and barley crops.
 
 ## Architecture
 
@@ -66,6 +66,14 @@ Components are organized into the following categories:
      - `TimelineControl.tsx`: Timeline controls for historical data
      - `ForecastItem.tsx`: Individual forecast day representation
      - `HistoricalChart.tsx`: Chart for historical weather data
+   - Agricultural components (planned):
+     - `CropSelector.tsx`: Visual crop selection interface
+     - `PhenologyTimeline.tsx`: Crop development stages visualization
+     - `RiskMap.tsx`: Agricultural risk visualization
+     - `CriticalStageCard.tsx`: Information on crop's critical stages
+     - `WaterBalanceChart.tsx`: Water balance visualization for crops
+     - `ThermalStressMap.tsx`: Thermal stress visualization
+     - `CropCalendar.tsx`: Planting and harvesting calendar
 
 3. **Modal Components** (`/client/src/components/modals/`):
    - `LoginModal.tsx`: User authentication
@@ -73,6 +81,11 @@ Components are organized into the following categories:
    - `LayerConfigModal.tsx`: Configuration for map layers
    - `HelpModal.tsx`: Contextual help
    - `MapDetailsModal.tsx`: Detailed map information
+   - Agricultural modals (planned):
+     - `RiskDetailModal.tsx`: Detailed agricultural risk information
+     - `AgronomicRecommendationModal.tsx`: Contextual recommendations
+     - `HistoricalComparisonModal.tsx`: Compare current data with historical
+     - `FieldRegistrationModal.tsx`: Register/edit agricultural fields
 
 4. **Page Components** (`/client/src/pages/`):
    - `Dashboard.tsx`: Main dashboard with current weather
@@ -80,6 +93,11 @@ Components are organized into the following categories:
    - `Forecast.tsx`: Weather forecast display
    - `Settings.tsx`: User preferences
    - `Help.tsx`: Help and documentation
+   - Agricultural pages (planned):
+     - `AgriculturalRisk.tsx`: Risk assessment for agriculture
+     - `CropManagement.tsx`: Crop-specific management tools
+     - `FieldManagement.tsx`: Field/parcel management
+     - `Recommendations.tsx`: Agronomic recommendations
 
 ### State Management
 
@@ -88,6 +106,11 @@ The application uses a combination of React Context and local component state:
 1. **ThemeProvider**: Manages light/dark theme (`/client/src/lib/providers/ThemeProvider.tsx`)
 2. **WeatherDataProvider**: Provides weather data throughout the app (`/client/src/lib/providers/WeatherDataProvider.tsx`)
 3. **TanStack Query**: For data fetching, caching, and mutation
+4. **Agricultural Providers** (planned):
+   - **CropProvider**: Manages crop-specific data and state
+   - **PhenologyProvider**: Provides phenological stage information
+   - **RiskAssessmentProvider**: Agricultural risk calculations and warnings
+   - **FieldManagementProvider**: User's field/parcel management
 
 ## Data Model
 
@@ -101,6 +124,11 @@ The core data models are defined in `shared/schema.ts` with the following key ty
 6. **User**: User account data
 7. **UserPreferences**: User-specific settings
 8. **MapLayer**: Weather map visualization layer
+9. **Crop**: Agricultural crop information (soybean, corn, wheat, barley)
+10. **CropStage**: Phenological stages of crops
+11. **AgriculturalRisk**: Risk assessment data for agricultural operations
+12. **Field**: User-defined agricultural field/parcel
+13. **RiskMap**: Geospatial data for agricultural risk visualization
 
 ## API Routes
 
@@ -120,6 +148,15 @@ Backend API routes are defined in `server/routes.ts`:
    - `GET /api/users/:id`: Get user data
    - `POST /api/users`: Create user
    - `PUT /api/users/:id`: Update user
+   
+4. **Agricultural Endpoints** (Planned):
+   - `GET /api/crops`: Get available crops
+   - `GET /api/crops/:id/stages`: Get phenological stages for a crop
+   - `GET /api/agricultural-risks`: Get agricultural risk data
+   - `GET /api/agricultural-risks/map`: Get risk map data
+   - `POST /api/fields`: Create a new field/parcel
+   - `GET /api/fields`: Get user fields
+   - `GET /api/recommendations`: Get agricultural recommendations
 
 ## Storage Abstraction
 
@@ -180,6 +217,25 @@ The application includes several custom hooks:
 2. Add layer handling in `client/src/hooks/use-map-layers.ts`
 3. Update UI controls in `client/src/components/ui/LayerControl.tsx`
 4. Implement visualization in `client/src/components/ui/WeatherMap.tsx`
+
+### Adding Agricultural Risk Features
+
+1. Update crop-related types in `shared/schema.ts`
+2. Create new components for crop visualization in `client/src/components/ui/`
+3. Implement new agricultural risk pages in `client/src/pages/`
+4. Add crop selection and risk visualization UI components
+5. Update the navigation sidebar to include agricultural sections
+6. Implement risk calculation algorithms in appropriate utility files
+7. Add API endpoints for crop and risk data in `server/routes.ts`
+
+### Implementing Phenological Features
+
+1. Define crop stage models in `shared/schema.ts`
+2. Create visualization components for crop stages in `client/src/components/ui/`
+3. Implement timeline visualization for phenological stages
+4. Connect phenological data with weather data for risk assessment
+5. Add critical stage indicators and notifications
+6. Implement the crop calendar functionality
 
 ## Current Implementation Status
 
